@@ -669,6 +669,7 @@ input.header-mobile__search-control:focus {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 a
 .slick-prev:before, .slick-next:before{
     color: #6c6b7b;    
@@ -1117,6 +1118,7 @@ select.form-control::after{
 }
 .main-news-banner {
     background-color: transparent;
+    background-size: cover;
 }
 .sponsors__item {
     margin: 0 45px;
@@ -1171,7 +1173,16 @@ select.form-control::after{
     border: 2px solid #93b76f !important;
     border-radius: 10px;
 }
-
+.bg__success{
+    background-color: #86bf3e !important;
+    border:transparent;
+    border-radius: 10px;
+}
+.bg__warning{
+    background-color:#ffb400 !important;
+    border:transparent;
+    border-radius: 10px;
+}
 
 .search-bar{
     width:25%;
