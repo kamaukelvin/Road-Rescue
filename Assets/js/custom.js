@@ -1,73 +1,121 @@
 // Add your custom JS code here
-// DOES WORK
-$('.gallery').slick({
-
+$(".testimonials").slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
   dots: true,
   centerMode: true,
-  centerPadding: '0',
-  slidesToShow: 3,
+  focusOnSelect: true
+});
+
+$(".recomends").slick({
+  dots: false,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
   responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
     {
       breakpoint: 480,
       settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1
+        slidesToShow: 1,
+        slidesToScroll: 1
       }
     }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
   ]
-  });
-
-
-// Add your custom JS code here
-// DOES WORK
-$('.galareyy').slick({
-
-    dots: true,
-    infinite: false,
-    speed: 300,
-    responsive: [
-        {
-            breakpoint: 4480,
-            settings: 'unslick'
-          },
-      {
-        breakpoint: 1024,
-        settings: {
-            settings: 'unslick'
-        }
-      },
-      {
-        breakpoint: 769,
-        settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            dots: true,
-            focusOnSelect: false,
-            arrows: true,
-            touchMove: false,
-            draggable: true,
-            swipe: true
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            focusOnSelect: false,
-            arrows: true,
-            touchMove: false,
-            draggable: true,
-            swipe: true
-        }
+});
+$(".perfect").slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
-    ]
-  });
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
 
-$('#couponview').modal();
+$('a[data-toggle="tab"]')
+  .on("shown.bs.tab", function() {
+    $($(this).attr("href"))
+      .find(".perfect2")
+      .slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
+      });
+  })
+  .first()
+  .trigger("shown.bs.tab");
